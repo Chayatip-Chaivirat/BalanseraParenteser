@@ -23,7 +23,7 @@ class Balance
         for (int i = 0; i < s.Length; i++)
         {
             char c = s[i]; // Hämta tecknet vid index i
-            if (c == '(' || c == '[') // Kontrollera om tecknet är en öppnande parentes
+            if (c == '(' || c == '[') // Om tecknet är en öppnande parentes eller hakparentes
             {
                 stack.Push(c); // Lägg till öppnande parentes på stacken
             }
@@ -39,12 +39,12 @@ class Balance
 
                 if (c == ')' && opening != '(') // Kontrollera om ( )  matchar
                 {
-                    balanced = false; // Om det inte matchar, strängen är inte balanserad
+                    balanced = false;
                     break;
                 }
                 if (c == ']' && opening != '[') // Kontrollera om [ ] matchar
                 {
-                    balanced = false; // Om det inte matchar, strängen är inte balanserad
+                    balanced = false; 
                     break;
                 }
             }
@@ -53,9 +53,10 @@ class Balance
         {
             balanced = false;
         }
+
         if (balanced)
         {
-            Console.WriteLine("1"); // Strängen är balanserad
+            Console.WriteLine("1");
         }
         else
         {
